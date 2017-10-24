@@ -3,14 +3,14 @@ import axios from 'axios'
 
 class TraceEvent {
   bind (el, binding, vnode) {
-    if (!binding) return
-    if (typeof binding.value !== 'object') {
-      console.warn('v-trace value is not a object in ' + binding.rawName)
-      return
-    }
     // eslint-disable-next-line no-constant-condition
     if (!'<%= options.apiTrace %>') {
       console.warn('Warn: apiTrace is not found in event-trace module options')
+      return
+    }
+    if (!binding) return
+    if (typeof binding.value !== 'object') {
+      console.warn('v-trace value is not a object in ' + binding.rawName)
       return
     }
 
