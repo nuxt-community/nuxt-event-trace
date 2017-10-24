@@ -1,0 +1,7 @@
+{
+  "name": "nuxt-event-trace",
+  "version": "1.0.0-rc11",
+  "main": "index.js",
+  "author": "clark",
+  "license": "MIT"
+}
