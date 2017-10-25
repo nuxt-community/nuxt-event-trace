@@ -1,4 +1,5 @@
 ## Module for event trace in Nuxt.js
+
 ### Install
 
 ```bash
@@ -6,6 +7,7 @@ $ yarn add nuxt-event-trace
 ```
 
 Add module into `nuxt.config.js`.
+
 1. `elementApi` is api url for dom elements tracking.
 1. `pageApi` is api url for pages routing tracking.
 
@@ -37,6 +39,7 @@ Define `v-trace` directive on `component`.
 
 1. Value items include: `category`, `action`, `label`, `value`, `nodeId`
 1. [Event Type](https://developer.mozilla.org/en-US/docs/Web/Events) is defined as modifiers, `click` is default if no type specified.
+
 ```html
 <input v-trace={}> <!-- click event -->
 <input v-trace.keydown={}> <!-- specified event -->
