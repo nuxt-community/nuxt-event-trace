@@ -4,8 +4,8 @@ import axios from 'axios'
 class TraceEvent {
   bind (el, binding, vnode) {
     // eslint-disable-next-line no-constant-condition
-    if (!'<%= options.apiTrace %>') {
-      console.warn('Warn: apiTrace is not found in event-trace module options')
+    if (!'<%= options.elementApi %>') {
+      console.warn('Warn: elementApi is not found in event-trace module options')
       return
     }
     if (!binding) return
@@ -29,7 +29,7 @@ class TraceEvent {
     if (!events.length) events.push('click') // listen click event by default
     events.forEach((event) => {
       el.addEventListener(event, () => {
-        axios.post('<%= options.apiTrace %>', info)
+        axios.post('<%= options.elementApi %>', info)
       }, false)
     })
   }

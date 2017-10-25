@@ -2,8 +2,8 @@ import axios from 'axios'
 
 export default ({ app: { router } }, inject) => {
   // eslint-disable-next-line no-constant-condition
-  if (!'<%= options.routeTrace %>') {
-    console.warn('Warn: routeTrace is not found in event-trace module options')
+  if (!'<%= options.pageApi %>') {
+    console.warn('Warn: pageApi is not found in event-trace module options')
     return
   }
   router.afterEach(function (to, from) {
@@ -15,6 +15,6 @@ export default ({ app: { router } }, inject) => {
       params: to.params,
       time: new Date()
     }
-    axios.post('<%= options.routeTrace %>', info)
+    axios.post('<%= options.pageApi %>', info)
   })
 }
